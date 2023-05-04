@@ -47,39 +47,10 @@ public class Elevador {
         
         /*
          *
-         *  ENTRADA PRIMEIRO ANDAR
+         *  ENTRADA DOS ANDARES
          *
          */
-        prevNumPeople = numPeople;
-        do {
-            if (numPeople > MAX_CAPACITY) {
-                numPeople = prevNumPeople;
-            }
-            
-            System.out.println("----- 1º ANDAR -----");
-            
-            do {
-                System.out.println("Entraram: ");
-                numPeopleIn = scan.nextInt();
-                if (numPeopleIn < 0) {
-                    System.out.println("(!) Valor inválido. Digite novamente.");
-                }
-            } while (numPeopleIn < 0);
-
-            numPeople += numPeopleIn;
-            
-            if (numPeople > MAX_CAPACITY) {
-                System.out.println("(!) Excesso de passageiros. Deve(m) sair " + (numPeople - MAX_CAPACITY) + " pessoa(s). \n");
-            }   
-        } while (numPeople > MAX_CAPACITY);   
-        
-        
-        /*
-         *
-         *  ENTRADA RESTO DOS ANDARES
-         *
-         */
-        for (int i = 2; i <= numFloors; i++) {
+        for (int i = 1; i <= numFloors; i++) {
 
             prevNumPeople = numPeople;
             do {
@@ -97,19 +68,20 @@ public class Elevador {
                     if (numPeopleIn < 0) {
                         System.out.println("(!) Valor inválido. Digite novamente.");
                     }
-                } while (numPeopleIn < 0);
-                
-                do {
-                    System.out.println("Saíram: ");
-                    numPeopleOut = scan.nextInt();
-                    if (numPeopleOut < 0) {
-                        System.out.println("(!) Valor inválido. Digite novamente.");
-                    }
-                } while (numPeopleOut < 0);
-                
+                } while (numPeopleIn < 0);     
                 numPeople += numPeopleIn;
-                numPeople -= numPeopleOut;
                 
+                if (i > 1) {
+                    do {
+                        System.out.println("Saíram: ");
+                        numPeopleOut = scan.nextInt();
+                        if (numPeopleOut < 0) {
+                            System.out.println("(!) Valor inválido. Digite novamente.");
+                        }
+                    } while (numPeopleOut < 0);
+                    numPeople -= numPeopleOut;
+                }
+
                 if (numPeople > MAX_CAPACITY) {
                     System.out.println("(!) Excesso de passageiros. Deve(m) sair " + (numPeople - MAX_CAPACITY) + " pessoa(s). \n");
                 }
@@ -117,6 +89,7 @@ public class Elevador {
                 if (numPeople < MIN_CAPACITY) {
                     System.out.println("(!) O número de pessoas dentro não pode ficar negativo. \n");
                 }
+                
             } while ((numPeople > MAX_CAPACITY) || (numPeople < MIN_CAPACITY));
                         
         }
