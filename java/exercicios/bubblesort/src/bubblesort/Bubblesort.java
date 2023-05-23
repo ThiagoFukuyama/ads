@@ -23,9 +23,9 @@ public class Bubblesort {
         
         bubbleSort(numbers);
         
-        System.out.println("Vetor organizado: ");
+        System.out.println("\nVetor organizado: ");
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+            System.out.println(numbers[i] + " ");
         }
         
     }
