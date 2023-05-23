@@ -15,7 +15,7 @@ public class Bubblesort {
         
         Scanner scan = new Scanner(System.in);
         
-        System.out.println("Digite os valores das 5 posições do vetor:");
+        System.out.println("Digite os 5 valores inteiros do vetor:");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(i + " - ");
             numbers[i] = scan.nextInt();
