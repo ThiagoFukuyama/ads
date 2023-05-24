@@ -38,6 +38,9 @@ public class VetorMultiplicadoMaior {
             System.out.print(numbersMultiplied[i] + " ");
         }
         
+        
+        scan.close();
+        
     }
     
 }
