@@ -11,7 +11,7 @@ public class Ex2_PagamentoEmpresa {
 
     public static void main(String[] args) {
         
-        final int TOTAL_EMPLOYEES = 3;
+        final int TOTAL_EMPLOYEES = 10;
         
         String[] employees = new String[TOTAL_EMPLOYEES];
         char[] genders = new char[TOTAL_EMPLOYEES];
