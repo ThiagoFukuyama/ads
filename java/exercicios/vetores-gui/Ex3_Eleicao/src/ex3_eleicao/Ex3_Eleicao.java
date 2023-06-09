@@ -1,6 +1,7 @@
 
 package ex3_eleicao;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -85,6 +86,24 @@ public class Ex3_Eleicao {
         
         /**
         *
+        * Checando se houve empate
+        */
+        boolean isTied = false;
+        ArrayList<String> tiedCandidates = new ArrayList<>();
+        tiedCandidates.add(winner);
+        
+        for (int i = 0; i < candidates.length; i++) {
+            
+            if (winnerVoteCount == candidateVoteCounts[i] && !winner.equals(candidates[i])) {
+                isTied = true;
+                tiedCandidates.add(candidates[i]);
+            }
+            
+        }
+        
+        
+        /**
+        *
         * Mostrando os resultados
         */
         System.out.println("\n----- RESULTADOS -----");
@@ -92,9 +111,22 @@ public class Ex3_Eleicao {
             System.out.printf("%-18s %-18d %n", candidates[i], candidateVoteCounts[i]);
         }
         
-        System.out.println("\n----- VENCEDOR -----");
-        System.out.println(winner);
-        System.out.println(winnerVoteCount + " votos!");
+        if (!isTied) {
+            
+            System.out.println("\n----- VENCEDOR -----");
+            System.out.println(winner);
+            System.out.println(winnerVoteCount + " votos!");
+            
+        } else {
+            
+            int tiedVotes = winnerVoteCount;
+            System.out.println("\n----- EMPATE -----");
+            for (int i = 0; i < tiedCandidates.size(); i++) {
+                System.out.println(tiedCandidates.get(i));
+            }
+            System.out.printf("%nEmpate com %d votos. %n", tiedVotes);
+            
+        }
         
         
         scan.close();
