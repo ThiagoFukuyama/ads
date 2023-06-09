@@ -12,7 +12,7 @@ public class Ex3_Eleicao {
 
     public static void main(String[] args) {
         
-        final int TOTAL_VOTES = 6;
+        final int TOTAL_VOTES = 15;
         
         String[] candidates = { "Monteiro Lobato", "Euclides da Cunha", "Paulo Freire" };
         int[] candidatesNumbers = { 15, 25, 35 };
