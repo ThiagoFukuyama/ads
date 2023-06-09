@@ -12,7 +12,7 @@ public class Ex3_Eleicao {
 
     public static void main(String[] args) {
         
-        final int TOTAL_VOTES = 15;
+        final int TOTAL_VOTES = 6;
         
         String[] candidates = { "Monteiro Lobato", "Euclides da Cunha", "Paulo Freire" };
         int[] candidatesNumbers = { 15, 25, 35 };
@@ -24,7 +24,7 @@ public class Ex3_Eleicao {
         
         System.out.println("QUE COMECEM AS ELEIÇÕES!!! \n");
         for (int i = 0; i < candidates.length; i++) {
-            System.out.printf("%-18s %-18d %n", candidates[i], candidatesNumbers[i]);
+            System.out.printf("%d | %s  %n", candidatesNumbers[i], candidates[i]);
         }
         
         
@@ -72,12 +72,14 @@ public class Ex3_Eleicao {
         * Calculando o vencedor
         */
         String winner = candidates[0];
+        int winnerNumber = candidatesNumbers[0];
         int winnerVoteCount = candidateVoteCounts[0];
         
         for (int i = 1; i < candidateVoteCounts.length; i++) {
             
             if (candidateVoteCounts[i] > winnerVoteCount) {
                 winner = candidates[i];
+                winnerNumber = candidatesNumbers[i];
                 winnerVoteCount = candidateVoteCounts[i];
             }
             
@@ -94,7 +96,7 @@ public class Ex3_Eleicao {
         
         for (int i = 0; i < candidates.length; i++) {
             
-            if (winnerVoteCount == candidateVoteCounts[i] && !winner.equals(candidates[i])) {
+            if (winnerVoteCount == candidateVoteCounts[i] && winnerNumber != candidatesNumbers[i]) {
                 isTied = true;
                 tiedCandidates.add(candidates[i]);
             }
@@ -108,21 +110,21 @@ public class Ex3_Eleicao {
         */
         System.out.println("\n----- RESULTADOS -----");
         for (int i = 0; i < candidates.length; i++) {
-            System.out.printf("%-18s %-18d %n", candidates[i], candidateVoteCounts[i]);
+            System.out.printf("%-2d | %-18s %d voto(s) %n", candidatesNumbers[i], candidates[i], candidateVoteCounts[i]);
         }
         
         if (isTied) {
             
             int tiedVotes = winnerVoteCount;
-            System.out.println("\n----- EMPATE -----");
+            System.out.println("\n------- EMPATE -------");
             for (int i = 0; i < tiedCandidates.size(); i++) {
                 System.out.println(tiedCandidates.get(i));
             }
-            System.out.printf("%nEmpate com %d votos. %n", tiedVotes);
+            System.out.printf("%nEmpate com %d voto(s). %n", tiedVotes);
             
         } else {
             
-            System.out.println("\n----- VENCEDOR -----");
+            System.out.println("\n------ VENCEDOR ------");
             System.out.println(winner);
             System.out.println(winnerVoteCount + " votos!");
             
