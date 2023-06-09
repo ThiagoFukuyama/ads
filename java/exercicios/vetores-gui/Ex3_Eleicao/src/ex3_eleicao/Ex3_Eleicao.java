@@ -111,13 +111,7 @@ public class Ex3_Eleicao {
             System.out.printf("%-18s %-18d %n", candidates[i], candidateVoteCounts[i]);
         }
         
-        if (!isTied) {
-            
-            System.out.println("\n----- VENCEDOR -----");
-            System.out.println(winner);
-            System.out.println(winnerVoteCount + " votos!");
-            
-        } else {
+        if (isTied) {
             
             int tiedVotes = winnerVoteCount;
             System.out.println("\n----- EMPATE -----");
@@ -125,6 +119,12 @@ public class Ex3_Eleicao {
                 System.out.println(tiedCandidates.get(i));
             }
             System.out.printf("%nEmpate com %d votos. %n", tiedVotes);
+            
+        } else {
+            
+            System.out.println("\n----- VENCEDOR -----");
+            System.out.println(winner);
+            System.out.println(winnerVoteCount + " votos!");
             
         }
         
