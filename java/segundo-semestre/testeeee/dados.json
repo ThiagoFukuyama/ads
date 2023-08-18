@@ -1,0 +1,58 @@
+[ 
+ {
+   "id": 110,
+        "nome": "botão",
+        "estoqueAtual": 20,
+        "estoqueMinimo": 15,
+        "preco": 0.30
+    },
+  {
+    "id": 112,
+        "nome": "linha",
+        "estoqueAtual": 10,
+        "estoqueMinimo": 12,
+        "preco": 2.60
+    },
+  {
+    "id": 130,
+        "nome": "tesoura",
+        "estoqueAtual": 3,
+        "estoqueMinimo": 5,
+        "preco": 13.00
+    },
+  {
+    "id": 114,
+        "nome": "fita",
+        "estoqueAtual": 8,
+        "estoqueMinimo": 6,
+        "preco": 0.80
+    },
+  {
+    "id": 123,
+        "nome": "revista",
+        "estoqueAtual": 3,
+        "estoqueMinimo": 2,
+        "preco": 10.00
+    },
+     {
+        "id": 456,
+        "nome": "barbante",
+        "estoqueAtual": 10,
+        "estoqueMinimo": 15,
+        "preco": 8.00
+    },
+  {
+    "id": 100,
+        "nome": "agulha",
+        "estoqueAtual": 8,
+        "estoqueMinimo": 6,
+        "preco": 5.20
+    },
+     {
+        "id": 200,    
+        "nome": "tecido",
+        "estoqueAtual": 12,
+        "estoqueMinimo": 10,
+        "preco": 3.90
+    }
+]
