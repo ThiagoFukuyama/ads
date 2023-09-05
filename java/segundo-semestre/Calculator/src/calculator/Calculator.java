@@ -12,7 +12,7 @@ public class Calculator {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
-       
+        
         double n1;
         double n2;
         char operation;
@@ -45,7 +45,11 @@ public class Calculator {
                     System.out.println("Multiplicação: " + multiply(n1, n2));
                     break;
                 case '/':
-                    System.out.println("Divisão: " + divide(n1, n2));
+                    try {
+                        System.out.println("Divisão: " + divide(n1, n2));
+                    } catch (ArithmeticException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 default:
                     throw new Exception("Operação inválida.");
@@ -76,7 +80,11 @@ public class Calculator {
         return  x * y;
     }
             
-    public static double divide(double x, double y) {
+    public static double divide(double x, double y) throws ArithmeticException {
+        if (y == 0) {
+            throw new ArithmeticException("O divisor não pode ser 0");
+        }
+        
         return  x / y;
     }
     
