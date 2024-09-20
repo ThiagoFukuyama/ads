@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "linkedlist.h": "c",
+        "exercicio1.h": "c",
+        "exercicio5.h": "c",
+        "ex5linkedlist.h": "c"
+    }
+}
