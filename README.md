@@ -13,4 +13,8 @@ Exercícios e experiências realizados durante a faculdade em Análise e Desenvo
     <img width="20" src="https://github.com/user-attachments/assets/7e022ce9-4c7d-44bd-abc6-cbde772f2918" />
     <span>&nbsp;C</span>
   </li>
+  <li>
+    <img width="25" src="https://github.com/user-attachments/assets/ffebf4ad-8061-4fcc-bcba-72bd7fd30aff" />
+    <span>Android Studio</span>
+  </li>
 </ul>
